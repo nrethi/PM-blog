@@ -43,7 +43,7 @@ jobs:
         
     - name: Test with pytest
       run: |
-        pytest ./sprint-1 --alluredir=allure-results
+        pytest --alluredir=allure-results
 
         - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
