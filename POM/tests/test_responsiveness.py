@@ -21,4 +21,4 @@ class TestResponsibility(object):
     '''def test_landing_responsiveness(self):
         self.landing_page.scale_browser_size(700, 700, self.landing_page.get_carousel_headers())
         assert self.landing_page.get_carousel_headers().is_displayed()'''
-
+#comment
