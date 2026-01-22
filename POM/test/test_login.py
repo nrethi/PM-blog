@@ -22,7 +22,7 @@ class TestAuthenticationPage(object):
     def test_login(self):
         self.authentication_page.visit()
         self.authentication_page.login(TESTUSER ['email'], TESTUSER['password'])
-        self.profile_page.wait_for_pageload()
+        #self.profile_page.wait_for_pageload()
         assert self.profile_page.get_active_recipes().is_displayed()
 
 
