@@ -24,3 +24,5 @@ class TestAuthenticationPage(object):
         self.authentication_page.login(TESTUSER ['email'], TESTUSER['password'])
         self.profile_page.wait_for_pageload()
         assert self.profile_page.get_active_recipes().is_displayed()
+
+
