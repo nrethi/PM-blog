@@ -23,6 +23,6 @@ class TestAuthenticationPage(object):
         self.authentication_page.visit()
         self.authentication_page.login(TESTUSER ['email'], TESTUSER['password'])
         #self.profile_page.wait_for_pageload()
-        assert self.profile_page.get_button_sign_out().is_displayed()
+        assert self.profile_page.get_header_email().text == "Email"
 
 
