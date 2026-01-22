@@ -2,7 +2,7 @@ from POM.utils.create_driver import create_preconfigured_chrome_driver
 from POM.pages.AuthenticationPage import AuthenticationPage
 from POM.pages.ProfilePage import ProfilePage
 from POM.data.user_testdata import TESTUSER
-
+import allure
 
 class TestAuthenticationPage(object):
 
@@ -13,6 +13,11 @@ class TestAuthenticationPage(object):
 
     def teardown_method(self):
         self.authentication_page.quit()
+
+    @allure.title("DisHub Login")
+    @allure.description("A belépés tesztelése")
+    @allure.severity(allure.severity_level.TRIVIAL)
+    @allure.tag("login")
 
     def test_login(self):
         self.authentication_page.visit()

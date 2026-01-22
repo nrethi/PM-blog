@@ -8,7 +8,7 @@ def create_preconfigured_chrome_driver():
     options.add_argument('--guest')
     options.add_argument('--headless')
     browser = webdriver.Chrome(options=options)
-    browser.maximize_window()
+    browser.set_window_size(1920, 1080)
     return browser
 
 
