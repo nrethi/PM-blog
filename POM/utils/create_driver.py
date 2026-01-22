@@ -10,3 +10,4 @@ def create_preconfigured_chrome_driver():
     browser.maximize_window()
     return browser
 
+

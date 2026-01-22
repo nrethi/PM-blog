@@ -1,3 +1,5 @@
+from selenium.webdriver.support.expected_conditions import visibility_of_element_located
+
 from POM.utils.create_driver import create_preconfigured_chrome_driver
 
 class GeneralPage(object):
@@ -23,3 +25,5 @@ class GeneralPage(object):
 
     def get_current_url(self):
             return self.browser.current_url
+
+
