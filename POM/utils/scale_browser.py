@@ -40,3 +40,4 @@ def scale_browser_size(width, height, webelement):
         else:
             print('nem található')
             break
+

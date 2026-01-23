@@ -7,7 +7,7 @@ from POM.pages.LandingPage import LandingPage
 #from POM.pages.RecipesPage import RecipePage
 from selenium.webdriver.common.by import By
 
-class TestResponsibility(object):
+'''class TestResponsibility(object):
 
     def setup_method(self):
         browser = create_preconfigured_chrome_driver()
@@ -17,8 +17,9 @@ class TestResponsibility(object):
 
     def teardown_method(self):
         self.authentication_page.quit()
+        self.browser.
 
-    '''def test_landing_responsiveness(self):
+    def test_landing_responsiveness(self):
         self.landing_page.scale_browser_size(700, 700, self.landing_page.get_carousel_headers())
-        assert self.landing_page.get_carousel_headers().is_displayed()'''
-#comment
+        assert self.landing_page.get_carousel_headers().is_displayed()
+#comment '''

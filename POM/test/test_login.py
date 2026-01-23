@@ -26,3 +26,4 @@ class TestAuthenticationPage(object):
         assert self.profile_page.get_header_email().text == "Email"
 
 
+
