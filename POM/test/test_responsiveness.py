@@ -1,5 +1,7 @@
 from hmac import digest_size
 
+import pytest
+
 from POM.utils.create_driver import create_preconfigured_chrome_driver
 from POM.pages.ProfilePage import ProfilePage
 from POM.pages.AuthenticationPage import AuthenticationPage
@@ -23,3 +25,9 @@ from selenium.webdriver.common.by import By
         self.landing_page.scale_browser_size(700, 700, self.landing_page.get_carousel_headers())
         assert self.landing_page.get_carousel_headers().is_displayed()
 #comment '''
+
+
+
+@pytest.fixture
+
+
