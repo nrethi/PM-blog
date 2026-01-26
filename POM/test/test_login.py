@@ -3,6 +3,7 @@ from POM.pages.AuthenticationPage import AuthenticationPage
 from POM.pages.ProfilePage import ProfilePage
 from POM.data.user_testdata import TESTUSER
 import allure
+import time
 
 class TestAuthenticationPage(object):
 
@@ -23,7 +24,7 @@ class TestAuthenticationPage(object):
         self.authentication_page.visit()
         self.authentication_page.login(TESTUSER ['email'], TESTUSER['password'])
         #self.profile_page.wait_for_pageload()
-        assert self.profile_page.get_header_email().text == "Email"
+        assert self.profile_page.get_header_email().is_displayed()
 
 
 

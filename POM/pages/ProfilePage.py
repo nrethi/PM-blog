@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from POM.pages.GeneralPage import GeneralPage
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium import webdriver
+from selenium.webdriver.remote.webdriver import WebDriver
 
 
 class ProfilePage(GeneralPage):
@@ -18,14 +18,11 @@ class ProfilePage(GeneralPage):
 
 
     def get_active_recipes(self):
-        return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(self.active_recipes_locator))
-
+        #return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(self.active_recipes_locator))
+        return WebDriver.find_element(self.browser, self.active_recipes_locator)
 
     def get_button_sign_out(self):
         return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(self.button_sign_out_locator))
 
     def get_header_email(self):
         return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located((By.XPATH, '//h6[text()="Email"]')))
-
-    def get_valami_dolog(self):
-        return
