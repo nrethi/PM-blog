@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from POM.pages.GeneralPage import GeneralPage
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.remote.webdriver import WebDriver
-
+import time
 
 class ProfilePage(GeneralPage):
     def __init__(self, browser=None):
@@ -22,6 +22,7 @@ class ProfilePage(GeneralPage):
         return WebDriver.find_element(self.browser, self.active_recipes_locator)
 
     def get_button_sign_out(self):
+        time.sleep(5)
         return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(self.button_sign_out_locator))
 
     def get_header_email(self):
