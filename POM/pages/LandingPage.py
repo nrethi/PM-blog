@@ -26,7 +26,7 @@ class LandingPage(GeneralPage):
     def get_carousel_headers(self):
         return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located())
 
-    def scale_browser_size(self, width, height, webelement):
+    ''' def scale_browser_size(self, width, height, webelement):
         element_displayed = webelement.is_displayed()
         self.browser.maximize_window()
         self.browser.get_window_size()
@@ -63,6 +63,6 @@ class LandingPage(GeneralPage):
 
             else:
                 print('nem található')
-                break
+                break '''
 
 

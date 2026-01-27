@@ -18,8 +18,7 @@ class ProfilePage(GeneralPage):
 
 
     def get_active_recipes(self):
-        #return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(self.active_recipes_locator))
-        return WebDriver.find_element(self.browser, self.active_recipes_locator)
+        return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(self.active_recipes_locator))
 
     def get_button_sign_out(self):
         time.sleep(5)
@@ -30,4 +29,4 @@ class ProfilePage(GeneralPage):
 
     def get_valami_dolog(self):
         self.save_screenshot('CI_test.png')
-        return WebDriver.find_element(self.browser, By.XPATH, '//h6[text()="Email"]')
+        return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located((By.XPATH, '//h6[text()="Email"]')))
