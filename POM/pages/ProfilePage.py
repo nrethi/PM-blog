@@ -28,4 +28,5 @@ class ProfilePage(GeneralPage):
         return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located((By.XPATH, '//h6[text()="Email"]')))
 
     def get_valami_dolog(self):
+        self.save_screenshot('CI_test')
         return WebDriver.find_element(self.browser, By.XPATH, '//h6[text()="Email"]')

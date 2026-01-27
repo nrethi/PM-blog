@@ -9,8 +9,9 @@ def create_preconfigured_chrome_driver():
     options.add_experimental_option("detach", True)
     options.add_argument('--guest')
     options.add_argument('--headless')
+    options.add_argument("--window-size=1920,1080")
     browser = webdriver.Chrome(options=options)
-    browser.set_window_size(1920, 1080)
+    #browser.set_window_size(1920, 1080)
     return browser
 
 

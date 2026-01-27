@@ -2,6 +2,7 @@ from POM.utils.create_driver import create_preconfigured_chrome_driver
 from POM.pages.AuthenticationPage import AuthenticationPage
 from POM.pages.ProfilePage import ProfilePage
 from POM.data.user_testdata import TESTUSER
+from POM.pages.GeneralPage import GeneralPage
 import allure
 import time
 
