@@ -43,7 +43,7 @@ class AuthenticationPage(GeneralPage):
 
 
     def get_header_login(self):
-        return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located((By.XPATH, '//h1[text()="Login"]')))
+        return WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable((By.XPATH, '//h1[text()="Login"]')))
 
 
     def get_header_create_account(self):
