@@ -26,3 +26,6 @@ class ProfilePage(GeneralPage):
 
     def get_header_email(self):
         return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located((By.XPATH, '//h6[text()="Email"]')))
+
+    def get_valami_dolog(self):
+        return WebDriver.find_element(self.browser, By.XPATH, '//h6[text()="Email"]')

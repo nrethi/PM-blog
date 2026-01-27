@@ -25,7 +25,7 @@ class TestAuthenticationPage(object):
         self.authentication_page.login(TESTUSER ['email'], TESTUSER['password'])
         #self.profile_page.wait_for_pageload()
         time.sleep(5)
-        assert self.profile_page.get_header_email().is_displayed()
+        assert self.profile_page.get_valami_dolog().is_displayed()
 
 
 
