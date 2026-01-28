@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from POM.pages.GeneralPage import GeneralPage
+from POM.test.conftest import attach_screenshot
 
 class AuthenticationPage(GeneralPage):
     def __init__(self, browser=None):
@@ -67,3 +68,6 @@ class AuthenticationPage(GeneralPage):
         self.get_input_email().send_keys(email)
         self.get_input_password().send_keys(password)
         self.get_button_login().click()
+
+    def attach_screenshot_to_allure(self):
+        return attach_screenshot(self.browser, "CI_test.png")
