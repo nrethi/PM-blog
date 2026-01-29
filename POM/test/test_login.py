@@ -8,7 +8,7 @@ from POM.pages.GeneralPage import GeneralPage
 from allure_commons.types import AttachmentType
 import allure
 import time
-from POM.test.conftest import attach_screenshot
+from POM.pages.GeneralPage import GeneralPage
 
 class TestAuthenticationPage(object):
 
@@ -28,9 +28,9 @@ class TestAuthenticationPage(object):
     def test_login(self):
         self.authentication_page.visit()
         self.authentication_page.login(TESTUSER2 ['email'], TESTUSER2['password'])
-        #self.profile_page.wait_for_pageload()
+            #self.profile_page.wait_for_pageload()
         time.sleep(5)
-        self.authentication_page.attach_screenshot_to_allure()
+            # self.authentication_page.attach_screenshot_to_allure()
         assert self.profile_page.get_valami_dolog().is_displayed()
 
 
