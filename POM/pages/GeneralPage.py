@@ -1,6 +1,5 @@
-from selenium.webdriver.support.expected_conditions import visibility_of_element_located
-
 from POM.utils.create_driver import create_preconfigured_chrome_driver
+import allure
 
 class GeneralPage(object):
 
@@ -25,5 +24,13 @@ class GeneralPage(object):
 
     def get_current_url(self):
             return self.browser.current_url
+
+
+    def attach_screenshot(driver, name):
+        allure.attach(
+            driver.get_screenshot_as_png(),
+            name="CI_test",
+            attachment_type=allure.attachment_type.PNG,
+        )
 
 
