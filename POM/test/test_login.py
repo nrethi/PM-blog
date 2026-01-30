@@ -4,7 +4,6 @@ from POM.utils.create_driver import create_preconfigured_chrome_driver
 from POM.pages.AuthenticationPage import AuthenticationPage
 from POM.pages.ProfilePage import ProfilePage
 from POM.data.user_testdata import TESTUSER1, TESTUSER2
-from POM.pages.GeneralPage import GeneralPage
 from allure_commons.types import AttachmentType
 import allure
 import time
@@ -27,6 +26,7 @@ class TestAuthenticationPage(object):
 
     def test_login(self):
         self.authentication_page.visit()
+        self.authentication_page.authenticate_user()
         self.authentication_page.login(TESTUSER2 ['email'], TESTUSER2['password'])
             #self.profile_page.wait_for_pageload()
         time.sleep(5)

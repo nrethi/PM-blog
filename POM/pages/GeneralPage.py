@@ -1,5 +1,10 @@
+import time
+
 from POM.utils.create_driver import create_preconfigured_chrome_driver
-import allure
+import mysql.connector
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class GeneralPage(object):
 
@@ -24,6 +29,14 @@ class GeneralPage(object):
 
     def get_current_url(self):
             return self.browser.current_url
+
+
+
+
+
+
+
+
 
 
     '''def attach_screenshot(driver, name):

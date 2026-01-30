@@ -1,5 +1,4 @@
 import mysql.connector
-from pprint import pprint
 
 kapcsolat = mysql.connector.connect(user='root',
                                     password='test1234',
@@ -7,8 +6,13 @@ kapcsolat = mysql.connector.connect(user='root',
                                     database='blog - projektmunka')
 
 assert kapcsolat.is_connected()
+confirmation = ("SELECT token \n"
+                "FROM blog.confirmation \n"
+                "WHERE user_id = 33")
 
- lekerdezes = ("SELECT * \n"
+
+
+lekerdezes = ("SELECT * \n"
               "FROM account \n"
               "WHERE firstname = 'Alfreda' \n"
               "AND lastname = 'Copeland' \n"
@@ -17,7 +21,13 @@ assert kapcsolat.is_connected()
               "AND username = 'andersbr@mac.com' \n"
               "AND address = 'Budapest, Baross utca'")
 
- authentication = ("UPDATE `blog`.`user` SET `enabled` = '1' WHERE (`user_id` = '34')")
+#authentication = ("UPDATE `blog`.`user` SET `enabled` = '1' WHERE (`user_id` = '33')")
+
+
+
+
+
+
 
 kurzor = kapcsolat.cursor(dictionary=True)
 

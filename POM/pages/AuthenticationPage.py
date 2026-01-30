@@ -1,3 +1,6 @@
+import time
+from pprint import pprint
+import mysql.connector
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -68,5 +71,29 @@ class AuthenticationPage(GeneralPage):
         self.get_input_password().send_keys(password)
         self.get_button_login().click()
 
-    def attach_screenshot_to_allure(self):
-        attach_screenshot(self.browser, "CI_test.png")
+    '''def attach_screenshot_to_allure(self):
+        attach_screenshot(self.browser, "CI_test.png")'''
+
+    def authenticate_user(self, userid = 33):
+        kapcsolat = mysql.connector.connect(user='root',
+                                            password='test1234',
+                                            host='127.0.0.1',
+                                            database='blog')
+
+        assert kapcsolat.is_connected()
+        confirmation = (f"SELECT token \n"
+                        "FROM blog.confirmation \n"
+                        f"WHERE user_id = {userid}")
+        kurzor = kapcsolat.cursor(dictionary=True)
+
+        kurzor.execute(confirmation)
+        validation_token = kurzor.fetchone()
+        validation_token = validation_token ['token']
+        pprint(validation_token)
+        authentication_url = f'http://localhost:8080/api/auth/confirm-registration?token={validation_token}'
+        original_window = self.browser.current_window_handle
+        self.browser.switch_to.new_window()
+        self.browser.get(authentication_url)
+        time.sleep(5)
+        self.browser.close()
+        self.browser.switch_to.window(original_window)
