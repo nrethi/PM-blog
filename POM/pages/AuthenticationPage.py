@@ -93,7 +93,7 @@ class AuthenticationPage(GeneralPage):
         authentication_url = f'http://localhost:8080/api/auth/confirm-registration?token={validation_token}'
         original_window = self.browser.current_window_handle
         self.browser.switch_to.new_window()
-        self.browser.get(authentication_url)
+        GeneralPage.visit(self)
         time.sleep(5)
         self.browser.close()
         self.browser.switch_to.window(original_window)

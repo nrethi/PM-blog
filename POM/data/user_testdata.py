@@ -7,9 +7,9 @@ TESTUSER1 = {
 }
 
 TESTUSER2 = {
-    "email":"yejes36300@1200b.com",
-    "password":"TestPass5",
-    "name":"TestName5"
+    "email":"garirij791@okexbit.com",
+    "password":"TestPass7",
+    "name":"TestName7"
 }
 
 INVALID_CREDENTIALS= {
