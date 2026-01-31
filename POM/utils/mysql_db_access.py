@@ -1,8 +1,6 @@
 import mysql.connector
 from pprint import pprint
-import time
-from POM.pages.GeneralPage import GeneralPage
-from POM.utils.create_driver import create_preconfigured_chrome_driver
+
 
 
 
