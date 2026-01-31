@@ -71,6 +71,13 @@ class AuthenticationPage(GeneralPage):
         self.get_input_password().send_keys(password)
         self.get_button_login().click()
 
+    def signup(self, email, name, password):
+        self.get_button_signup().click()
+        self.get_input_email().send_keys(email)
+        self.get_input_name().send_keys(name)
+        self.get_input_password().send_keys(password)
+        self.get_button_submit().click()
+
     '''def attach_screenshot_to_allure(self):
         attach_screenshot(self.browser, "CI_test.png")'''
 
