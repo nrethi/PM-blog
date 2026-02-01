@@ -14,6 +14,7 @@ class TestAuthenticationPage(object):
         self.authentication_page = AuthenticationPage(browser)
         self.profile_page = ProfilePage(browser)
         #self.token_page = TokenPage(browser)
+        self.authentication_page.visit()
         self.authentication_page.signup(TESTUSER2 ['email'], TESTUSER2['name'], TESTUSER2['password'])
         #self.token_page.visit()
         enable_user(TESTUSER2 ['email'])
