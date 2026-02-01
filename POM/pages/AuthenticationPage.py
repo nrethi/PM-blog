@@ -9,7 +9,7 @@ class AuthenticationPage(GeneralPage):
         super().__init__(browser, 'http://localhost:4200/authentication')
         self.button_signup_locator = (By.XPATH, '//button[text()="Sign Up"]')
         self.button_login_locator = (By.XPATH, '//button[text()="Login"]')
-        self.button_submit_locator = (By.XPATH, '//button[text()="Submit]')
+        self.button_submit_locator = (By.XPATH, '//button[text()="Submit"]')
 
     def wait_for_pageload(self):
         return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(self.button_signup_locator))
