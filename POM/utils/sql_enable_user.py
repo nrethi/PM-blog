@@ -16,15 +16,18 @@ def enable_user(email):
     get_user_id = ("SELECT user_id \n"
                    "FROM blog.user \n"
                    f"WHERE email = '{email}' ")
-
+    user_id = 1
 
     authorize = ("UPDATE blog.user \n"
                  "SET enabled = 1 \n"
-                 f"WHERE (user_id = {get_user_id})")
+                 f"WHERE (user_id = {user_id})")
 
 
     kurzor = kapcsolat.cursor(dictionary=True)
 
     kurzor.execute(get_user_id)
-    pprint(get_user_id)
+    user_id = kurzor.fetchone()
+    pprint(user_id)
     kurzor.execute(authorize)
+
+enable_user('garirij791@okexbit.com')
