@@ -1,4 +1,4 @@
-
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -76,5 +76,13 @@ class AuthenticationPage(GeneralPage):
         self.get_input_password().send_keys(password)
         self.get_button_submit().click()
 
-    '''def attach_screenshot_to_allure(self):
-        attach_screenshot(self.browser, "CI_test.png")'''
+    def get_screenshot(self):
+        self.save_screenshot("CI_test.png")
+
+
+    def attach_screenshot(self, name):
+        allure.attach(
+            self.get_screenshot(),
+            name="CI_test.png",
+            attachment_type=allure.attachment_type.PNG,
+        )
