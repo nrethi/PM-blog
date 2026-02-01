@@ -20,7 +20,7 @@ class TestAuthenticationPage(object):
         self.authentication_page.quit()
 
 
-    @pytest.mark.skip(reason="Pipeline environment doesnt like sql hashes for some reason")
+    #@pytest.mark.skip(reason="Pipeline environment doesnt like sql hashes for some reason")
     @allure.title("DisHub Standard Login")
     @allure.description("A belépés tesztelése")
     @allure.severity(allure.severity_level.CRITICAL)
