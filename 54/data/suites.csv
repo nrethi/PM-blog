@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Kulcsszó alapján való keresés tesztelése","2206","DisHub Keyword search","POM.test","Sun Feb 01 19:48:08 UTC 2026","passed","Sun Feb 01 19:48:10 UTC 2026","TestAuthenticationPage","test_keyword_search","",""
+"A belépés tesztelése","5697","DisHub Standard Login","POM.test","Sun Feb 01 19:48:19 UTC 2026","broken","Sun Feb 01 19:48:24 UTC 2026","TestAuthenticationPage","test_login","",""
+"","5744","test_search_capital_keyword","POM.test","Sun Feb 01 19:48:11 UTC 2026","broken","Sun Feb 01 19:48:17 UTC 2026","TestAuthenticationPage","test_keyword_search","",""
