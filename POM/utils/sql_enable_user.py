@@ -16,7 +16,7 @@ def enable_user(email):
     get_user_id = ("SELECT user_id \n"
                    "FROM blog.user \n"
                    f"WHERE email = '{email}' ")
-    user_id = 1
+    user_id = 39
 
     authorize = ("UPDATE blog.user \n"
                  "SET enabled = 1 \n"
@@ -29,5 +29,6 @@ def enable_user(email):
     user_id = kurzor.fetchone()
     pprint(user_id)
     kurzor.execute(authorize)
+    kapcsolat.commit()
 
 enable_user('garirij791@okexbit.com')
