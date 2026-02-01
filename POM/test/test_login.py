@@ -33,7 +33,7 @@ class TestAuthenticationPage(object):
         #self.token_page.visit()
         self.authentication_page.visit()
         self.authentication_page.login(TESTUSER2 ['email'], TESTUSER2['password'])
-        self.profile_page.wait_for_pageload()
+        #self.profile_page.wait_for_pageload()
 
             # self.authentication_page.attach_screenshot_to_allure()
         assert self.profile_page.get_valami_dolog().is_displayed()
