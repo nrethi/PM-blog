@@ -34,10 +34,7 @@ class TestAuthenticationPage(object):
         self.authentication_page.visit()
         self.authentication_page.login(TESTUSER2 ['email'], TESTUSER2['password'])
         #self.profile_page.wait_for_pageload()
-
-        self.authentication_page.get_screenshot()
-        self.authentication_page.get_screenshot()
-        self.authentication_page.save_screenshot("CI_test.png")
+        self.authentication_page.attach_screenshot('CI_test')
         assert self.profile_page.get_valami_dolog().is_displayed()
 
 

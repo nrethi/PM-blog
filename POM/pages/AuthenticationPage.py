@@ -82,7 +82,7 @@ class AuthenticationPage(GeneralPage):
 
     def attach_screenshot(self, name):
         allure.attach(
-            self.get_screenshot(),
-            name="CI_test.png",
+            self.browser.get_screenshot_as_png(),
+            name=name,
             attachment_type=allure.attachment_type.PNG,
         )
