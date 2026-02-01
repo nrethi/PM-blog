@@ -4,7 +4,7 @@ from pprint import pprint
 
 
 
-def get_user_validation_token(self, userid=39):
+def get_user_validation_token(self, userid=29):
     kapcsolat = mysql.connector.connect(user='root',
                                         password='test1234',
                                         host='127.0.0.1',

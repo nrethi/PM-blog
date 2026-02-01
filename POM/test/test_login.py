@@ -3,6 +3,7 @@ from POM.pages.AuthenticationPage import AuthenticationPage
 from POM.pages.ProfilePage import ProfilePage
 from POM.data.user_testdata import TESTUSER1, TESTUSER2
 import allure
+from POM.utils.sql_enable_user import enable_user
 from POM.pages.TokenPage import TokenPage
 import pytest
 
@@ -12,9 +13,10 @@ class TestAuthenticationPage(object):
         browser = create_preconfigured_chrome_driver()
         self.authentication_page = AuthenticationPage(browser)
         self.profile_page = ProfilePage(browser)
-        self.token_page = TokenPage(browser)
+        #self.token_page = TokenPage(browser)
         self.authentication_page.signup(TESTUSER2 ['email'], TESTUSER2['name'], TESTUSER2['password'])
-        self.token_page.visit()
+        #self.token_page.visit()
+        enable_user(TESTUSER2 ['email'])
 
     def teardown_method(self):
         self.authentication_page.quit()
