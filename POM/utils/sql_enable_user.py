@@ -15,7 +15,7 @@ def enable_user(email):
 
     get_user_id = ("SELECT user_id \n"
                    "FROM blog.user \n"
-                   f"WHERE email = {email} ")
+                   f"WHERE email = '{email}' ")
 
 
     authorize = ("UPDATE blog.user \n"
