@@ -13,9 +13,10 @@ class TestAuthenticationPage(object):
 
     @allure.title("DisHub Keyword search")
     @allure.description("Kulcsszó alapján való keresés tesztelése")
-    @allure.severity(allure.severity_level.TRIVIAL)
-    @allure.tag("keyword", "search")
+    @allure.severity(allure.severity_level.NORMAL)
 
+
+    @allure.tag("keyword", "search", "positive")
     def test_search_keyword(self):
         self.filtered_search_page.visit()
         self.filtered_search_page.get_input_keyword_search().send_keys('lobster')
@@ -23,9 +24,11 @@ class TestAuthenticationPage(object):
         print(self.filtered_search_page.get_first_displayed_recipe_title())
         assert "Lobster" or "lobster" in self.filtered_search_page.get_first_displayed_recipe_title()
 
+
+    @allure.tag("keyword", "search", "negative")
     def test_search_capital_keyword(self):
         self.filtered_search_page.visit()
         self.filtered_search_page.get_input_keyword_search().send_keys('Lobster')
         self.filtered_search_page.get_button_keyword_search().click()
         print(self.filtered_search_page.get_first_displayed_recipe_title())
-        assert "Lobster" or "lobster" in self.filtered_search_page.get_first_displayed_recipe_title()
+        assert "Lobster" or "lobster" not in self.filtered_search_page.get_first_displayed_recipe_title()
